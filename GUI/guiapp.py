@@ -33,7 +33,7 @@ students_listbox.pack()
 
 students_listbox.insert(0, "Boaz")
 students_listbox.insert(0, "Rehaan")
-students_listbox.insert(0, "AARAN")
+students_listbox.insert(0, "Hello!!")
 
 grade_label = Label()
 grade_label.pack()
