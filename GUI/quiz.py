@@ -9,8 +9,8 @@ score = 0
 
 # Dictionary of questions
 questions_answers = {
-    1: ["Where is the Eiffel Tower located?",
-        'Paris, France',
+    1: ["Where is the Pyramid of Giza?",
+        'Egypt',
         'London, England',
         'Rome, Italy',
         1],
@@ -19,10 +19,10 @@ questions_answers = {
         'The Great Wall of China',
         'Colosseum',
         1],
-    3: ["What is the nickname of the Statue of Liberty?",
-        'Lady of Freedom',
-        'Liberty Enlightening the World',
-        'Statue of Hope',
+    3: ["Which country gifted the USA the Statue Of Liberty?",
+        'Canada',
+        'France',
+        'Germany',
         2],
     4: ["Which monument was built in honor of the first emperor of China?",
         'Pyramids of Egypt',
@@ -39,10 +39,10 @@ questions_answers = {
         'Rome, Italy',
         'Cairo, Egypt',
         2],
-    7: ["What is the ancient city located in Jordan that is famous for its rock-cut architecture?",
-        'Petra',
-        'Angkor Wat',
-        'The Great Wall of China',
+    7: ["What is the most famous mythical city that is said to be submerged?",
+        'Atlantis',
+        'El Dorada',
+        'Mount Olympus',
         1],
     8: ["Which monument is famous for its intricate carvings and is located in India?",
         'Stonehenge',
@@ -74,34 +74,29 @@ def randomiser():
 
 class QuizStarter:
     def __init__(self, parent):
-        background_color = "#40476D"
+        background_color = "#c20a44"
 
 
-        # Frame setup
         self.quiz_frame = Frame(parent, bg=background_color, padx=100, pady=100)
         self.quiz_frame.grid()
 
 
-        # Heading label
-        self.heading_label = Label(self.quiz_frame, text="Famous Monuments Quiz", font=("Times New Roman", "18", "bold"), bg=background_color)
+        self.heading_label = Label(self.quiz_frame, text="Quiz About Monuments!", font=("Times New Roman", "18", "bold"), bg=background_color)
         self.heading_label.grid(row=0, padx=20)
 
 
         self.var1 = IntVar()
 
-
-        # Username label
-        self.user_label = Label(self.quiz_frame, text="Please enter your username below:", font=("Tw Cen MT", "16"), bg=background_color)
+        self.user_label = Label(self.quiz_frame, text="Please enter your name below:", font=("Tw Cen MT", "16"), bg=background_color)
         self.user_label.grid(row=1, padx=20, pady=20)
 
-
-        # Entry box for username
+        # Box for entering name
         self.entry_box = Entry(self.quiz_frame)
         self.entry_box.grid(row=2, padx=20, pady=20)
 
 
-        # Continue button
-        self.continue_button = Button(self.quiz_frame, text="Continue", font=("Helvetica", "13", "bold"), bg="orange", command=self.name_collection)
+        # Confirming button
+        self.continue_button = Button(self.quiz_frame, text="Continue", font=("Helvetica", "13", "bold"), bg="white", command=self.name_collection)
         self.continue_button.grid(row=3, padx=20, pady=20)
 
 
@@ -115,12 +110,11 @@ class QuizStarter:
 
 class Quiz:
     def __init__(self, parent):
-        background_color = "#826754"  
+        background_color = "#c20a44"  
         text_color = "#ffffff"  
-        button_color = "#AD5D4E"  
+        button_color = "#ffffff"  
         button_text_color = "#fffffff"  
        
-        # Frame setup
         self.quiz_frame = Frame(parent, bg=background_color, padx=100, pady=100)
         self.quiz_frame.grid()
 
@@ -135,8 +129,6 @@ class Quiz:
 
         self.var1 = IntVar()
 
-
-        # Radio buttons (four consistent options)
         self.rb1 = Radiobutton(self.quiz_frame, text=questions_answers[qnum][1], variable=self.var1, value=1, indicator=0, background=background_color, fg=text_color)
         self.rb1.grid(row=1, sticky=W, padx=20, pady=5)
 
